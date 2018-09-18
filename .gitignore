@@ -1,6 +1,9 @@
 # System Files
 .DS_Store
 
+# React Build
+build/
+
 # Logs
 logs
 *.log
