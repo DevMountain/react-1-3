@@ -69,6 +69,7 @@ componentDidMount() {
         .then( productsResponse => {
             // ...do something with the response
         })
+    }
     ```
 
     </details>
@@ -212,26 +213,31 @@ export default class AddProduct extends Component {
       image: ""
     };
   }
+
   handleName(name) {
     this.setState({
       name: name
     });
   }
+
   handleDescription(description) {
     this.setState({
       description: description
     });
   }
+
   handlePrice(price) {
     this.setState({
       price: price
     });
   }
+
   handleImage(image) {
     this.setState({
       image: image
     });
   }
+
   submit() {
     const newItem = {
       name: this.state.name,
@@ -281,7 +287,7 @@ export default class AddProduct extends Component {
 - This method should accept one argument, an `object` with a name, description, price and image value.
 - This method should submit a new product to the products API, using an axios `POST` request. Refer to the [API docs](http://104.248.178.153/products/) for how you should format this request.
   - Remember to append your API key onto the request URL as a URL query parameter.
-  - e.g. `"/api/product?key=" + this.state.apiKey`
+  - e.g. `"/api/product?key=${this.state.apiKey}`
 - The resulting data from the post request will be a complete list of products, including the newly added item; use this result data to update the products on state.
   - To filter the products and put them on state, you can refer to the code in `componentDidMount`, where we first got the list of products.
 
@@ -329,9 +335,11 @@ import AddProduct from "./components/AddProduct";
 export default class App extends Component {
   constructor() {
     super();
+
     this.state = {
       /* ... */
     };
+
     this.submit = this.submit.bind(this);
   }
 
@@ -374,7 +382,9 @@ In this part we will be changing up the way we handle the cart. All of the cart 
 ```js
 addToCart( item ) {
   axios.post(`http://104.248.178.153/products/catalog/${item}?key=${this.state.apiKey}`)
-    .then(cartResponse => this.setState({ cart: cartResponse.data }))
+    .then(cartResponse => {
+      this.setState({ cart: cartResponse.data })
+    })
 }
 ```
 
@@ -523,7 +533,7 @@ handleSearch() {
 
 </details>
 
-# Step 5
+## Step 3
 
 - Now we are going to use another API to process the user's payment when they checkout.
   - Payment API docs: http://104.248.178.153/payment/
@@ -546,7 +556,7 @@ handleSearch() {
 
     </details>
 
-# Step 6
+## Step 4
 
 - Then, in our checkout method, we will use an axios post to send the cart to the payment API.
 - Create a `POST` request in the `checkout` method, that will send the `this.state.cart` array.
