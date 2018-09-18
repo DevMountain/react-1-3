@@ -42,21 +42,22 @@ In this part we will use `axios` in the `componentDidMount` method of `App`, to 
   - This will be a `GET` request. The API docs will tell you how to format the request.
   - Once you have a key, store it on state in your app
 
-    <details><summary> Detailed Instructions </summary>
+<details><summary> Detailed Instructions </summary>
 
-  Let's begin by opening `src/App.js` and creating a `componentDidMount` method after the `constructor` but before the `render` method.
+Let's begin by opening `src/App.js` and creating a `componentDidMount` method after the `constructor` but before the `render` method.
 
-  ```js
-  constructor(){
-      props()
-      this.state = {
-          apiKey: '<<API key that you got using postman>>'
-      }
-  }
-  componentDidMount() {
-      // axios request will go here
-  }
-  ```
+```js
+constructor(){
+    props()
+    this.state = {
+        apiKey: '<<API key that you got using postman>>'
+    }
+}
+componentDidMount() {
+    // axios request will go here
+}
+```
+</details>
 
 ## Step 2
 
@@ -64,12 +65,12 @@ In this part we will use `axios` in the `componentDidMount` method of `App`, to 
 
     <details> <summary> example code </summary>
 
-  ```js
-  componentDidMount() {
-      axios.get('http://104.248.178.153/products/catalog?key='+this.state.apiKey)
-           .then( productsResponse => { // ...do something with the response
-           })
-  ```
+    ```js
+    componentDidMount() {
+        axios.get('http://104.248.178.153/products/catalog?key='+this.state.apiKey)
+            .then( productsResponse => { // ...do something with the response
+            })
+    ```
 
     </details>
 
@@ -79,14 +80,14 @@ In this part we will use `axios` in the `componentDidMount` method of `App`, to 
 
     <details> <summary> example code </summary>
 
-  ```js
-  axios
-    .get("http://104.248.178.153/products/catalog?key=" + this.state.apiKey)
-    .then(productsResponse => {
-      productsResponse.data.forEach(item => (item.quantity = 0));
-      // ...
-    });
-  ```
+    ```js
+    axios
+      .get("http://104.248.178.153/products/catalog?key=" + this.state.apiKey)
+      .then(productsResponse => {
+        productsResponse.data.forEach(item => (item.quantity = 0));
+        // ...
+      });
+    ```
 
     </details>
 
@@ -96,23 +97,23 @@ In this part we will use `axios` in the `componentDidMount` method of `App`, to 
 
     <details> <summary> example code </summary>
 
-  ```js
-  let camping = productsResponse.data.filter(
-    item => item.category === "camping"
-  );
-  let clothing = productsResponse.data.filter(
-    item => item.category === "clothing"
-  );
-  let candy = productsResponse.data.filter(item => item.category === "candy");
-  let food = productsResponse.data.filter(item => item.category === "food");
-  // now that we have this data sorted into categories, we can set these on state
-  this.setState({
-    camping: camping,
-    clothing: clothing,
-    candy: candy,
-    food: food
-  });
-  ```
+    ```js
+    let camping = productsResponse.data.filter(
+      item => item.category === "camping"
+    );
+    let clothing = productsResponse.data.filter(
+      item => item.category === "clothing"
+    );
+    let candy = productsResponse.data.filter(item => item.category === "candy");
+    let food = productsResponse.data.filter(item => item.category === "food");
+    // now that we have this data sorted into categories, we can set these on state
+    this.setState({
+      camping: camping,
+      clothing: clothing,
+      candy: candy,
+      food: food
+    });
+    ```
 
     </details>
 
@@ -158,15 +159,15 @@ componentDidMount() {
 
     <details> <summary> example code </summary>
 
-  ```js
-  handleName(newName) {
-      this.setState({ name: newName })
-  }
-  ```
+    ```js
+    handleName(newName) {
+        this.setState({ name: newName })
+    }
+    ```
 
-  ```js
-  <input type="text" value="this.state.name" onChange={(event)=>this.handleName(event.target.value)}>
-  ```
+    ```js
+    <input type="text" value="this.state.name" onChange={(event)=>this.handleName(event.target.value)}>
+    ```
 
     </details>
 
@@ -175,26 +176,26 @@ componentDidMount() {
 
 - Create a `submit` button. This button should submit the data for the new item, by calling a function which will be passed from the `App` component as a prop.
 
-<details> <summary> example code </summary>
+  <details> <summary> example code </summary>
 
-```js
-// on AddProduct.js
-submit() {
-    const newItem = {
-        name: this.state.name,
-        description: this.state.description,
-        price: this.state.price,
-        image: this.state.image
-    }
-    this.props.submit(newItem)
-}
-```
+  ```js
+  // on AddProduct.js
+  submit() {
+      const newItem = {
+          name: this.state.name,
+          description: this.state.description,
+          price: this.state.price,
+          image: this.state.image
+      }
+      this.props.submit(newItem)
+  }
+  ```
 
-```js
-<button onClick={() => this.submit()}> submit </button>
-```
+  ```js
+  <button onClick={() => this.submit()}> submit </button>
+  ```
 
-</details>
+  </details>
 
 - Make sure to label your input fields with a `p` tag, so that the user knows which field he is updating.
 
@@ -538,16 +539,16 @@ handleSearch() {
 
     <details><summary> Detailed  Instructions </summary>
 
-  In App.js, componendDidMount
+    In App.js, componendDidMount
 
-  ```js
-  constructor(){
-      super()
-      this.state = {
-          paymentAPIKey = '<<key you get from making get request with postman for payment api key>>'
-      }
-  }
-  ```
+    ```js
+    constructor(){
+        super()
+        this.state = {
+            paymentAPIKey = '<<key you get from making get request with postman for payment api key>>'
+        }
+    }
+    ```
 
     </details>
 
