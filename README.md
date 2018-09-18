@@ -91,27 +91,27 @@ componentDidMount() {
 
     </details>
 
-- The product API will give us data sorted by category of `food`, `clothing`, `candy`, `camping`. We need to sort this response data, and put it on matching objects on state.
+- The product API will give us data sorted by category of `hat`, `shirt`, `swag`, `cold weather`. We need to sort this response data, and put it on matching objects on state.
 
   - In order to do this, we can filter the result object by the item category.
 
     <details> <summary> example code </summary>
 
     ```js
-    let camping = productsResponse.data.filter(
-      item => item.category === "camping"
+    let hat = productsResponse.data.filter(
+      item => item.category === "hat"
     );
-    let clothing = productsResponse.data.filter(
-      item => item.category === "clothing"
+    let shirt = productsResponse.data.filter(
+      item => item.category === "shirt"
     );
-    let candy = productsResponse.data.filter(item => item.category === "candy");
-    let food = productsResponse.data.filter(item => item.category === "food");
+    let swag = productsResponse.data.filter(item => item.category === "swag");
+    let coldWeather = productsResponse.data.filter(item => item.category === "cold weather");
     // now that we have this data sorted into categories, we can set these on state
     this.setState({
-      camping: camping,
-      clothing: clothing,
-      candy: candy,
-      food: food
+      hat: hat,
+      shirt: shirt,
+      swag: swag,
+      coldWeather: coldWeather
     });
     ```
 
@@ -131,16 +131,16 @@ componentDidMount() {
             // we also need to add a quantity to the each product item
             productsResponse.data.forEach( item => item.quantity = 0 )
             // here we need to sort the resulting product data by category
-            let camping = productsResponse.data.filter( item => item.category === "camping" )
-            let clothing = productsResponse.data.filter( item => item.category === "clothing" )
-            let candy = productsResponse.data.filter( item => item.category === "candy" )
-            let food = productsResponse.data.filter( item => item.category === "food" )
+            let hat = productsResponse.data.filter( item => item.category === "hat" )
+            let shirt = productsResponse.data.filter( item => item.category === "shirt" )
+            let swag = productsResponse.data.filter( item => item.category === "swag" )
+            let coldWeather = productsResponse.data.filter( item => item.category === "cold weather" )
             // now that we have this data sorted into categories, we can set these on state
             this.setState({
-                camping: camping,
-                clothing: clothing,
-                candy: candy,
-                food: food
+                hat: hat,
+                shirt: shirt,
+                swag: swag,
+                coldWeather: coldWeather
             })
         })
     })
@@ -300,16 +300,16 @@ submit ( product ) {
     axios.post('http://104.248.178.153/products/catalog?key='+this.state.apiKey, product)
          .then( response => {
              // filter response data by category
-            let camping = productsResponse.data.filter( item => item.category === "camping" )
-            let clothing = productsResponse.data.filter( item => item.category === "clothing" )
-            let candy = productsResponse.data.filter( item => item.category === "candy" )
-            let food = productsResponse.data.filter( item => item.category === "food" )
+            let hat = productsResponse.data.filter( item => item.category === "hat" )
+            let shirt = productsResponse.data.filter( item => item.category === "shirt" )
+            let swag = productsResponse.data.filter( item => item.category === "swag" )
+            let coldWeather = productsResponse.data.filter( item => item.category === "cold weather" )
             // set these categories on state
             this.setState({
-                camping: camping,
-                clothing: clothing,
-                candy: candy,
-                food: food
+                hat: hat,
+                shirt: shirt,
+                swag: swag,
+                coldWeather: coldWeather
             })
          })
 }
@@ -514,15 +514,15 @@ handleSearch() {
     axios.get(`http://104.248.178.153/products/catalog?key=${this.state.apiKey}&name=${this.state.searchInput}`)
          .then(productsResponse => {
             // filter results onto arrays
-            let camping = productsResponse.data.filter(item => item.category === "camping");
-            let candy = productsResponse.data.filter(item => item.category === "candy");
-            let clothing = productsResponse.data.filter(item => item.category === "clothing");
-            let food = productsResponse.data.filter(item => item.category === "food");
+            let hat = productsResponse.data.filter(item => item.category === "hat");
+            let shirt = productsResponse.data.filter(item => item.category === "shirt");
+            let swag = productsResponse.data.filter(item => item.category === "swag");
+            let coldWeather = productsResponse.data.filter(item => item.category === "cold weather");
             this.setState({
-                camping: camping
-                candy:   candy
-                clothing:clothing
-                food:    food
+                hat: hat
+                shirt: shirt
+                swag: swag
+                coldWeather: coldWeather
         });
 }
 ```
