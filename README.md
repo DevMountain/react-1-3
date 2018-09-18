@@ -126,7 +126,7 @@ Modify componentDidMount, to also hit the products endpoint, to get all products
 
 ```js
 componentDidMount() {
-    axios.get('http://104.248.178.153/products/catalog?key='+apiKeyResponse.data.apiKey)
+    axios.get('http://104.248.178.153/products/catalog?key='+this.state.apiKey)
         .then( productsResponse => {
             // we also need to add a quantity to the each product item
             productsResponse.data.forEach( item => item.quantity = 0 )
