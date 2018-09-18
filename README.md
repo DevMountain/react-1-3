@@ -35,6 +35,7 @@ In this part we will use `axios` in the `componentDidMount` lifecycle method of 
 
 - Run `npm install axios` in your project root directory, to install the `axios` package.
 - Import `axios` in `App.js`, at the top of the file, like so: `import axios from "axios";`
+- We will be using products from the API instead of the local ones, so delete the products you hard coded into your `App.js`
 - Create a `componentDidMount` method on the `App` component.
 - In the `componentDidMount`, we will make an axios request to get a list of products from the server. Refer to the API docs for how to format your axios request. Products API docs: `http://104.248.178.153/products/`
 - In order to use the API, an `API key` is required. Use `Postman` to request an `API key` from the products server.
