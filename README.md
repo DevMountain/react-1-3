@@ -176,26 +176,26 @@ componentDidMount() {
 
 - Create a `submit` button. This button should submit the data for the new item, by calling a function which will be passed from the `App` component as a prop.
 
-<details> <summary> example code </summary>
+  <details> <summary> example code </summary>
 
-```js
-// on AddProduct.js
-submit() {
-    const newItem = {
-        name: this.state.name,
-        description: this.state.description,
-        price: this.state.price,
-        image: this.state.image
-    }
-    this.props.submit(newItem)
-}
-```
+  ```js
+  // on AddProduct.js
+  submit() {
+      const newItem = {
+          name: this.state.name,
+          description: this.state.description,
+          price: this.state.price,
+          image: this.state.image
+      }
+      this.props.submit(newItem)
+  }
+  ```
 
-```js
-<button onClick={() => this.submit()}> submit </button>
-```
+  ```js
+  <button onClick={() => this.submit()}> submit </button>
+  ```
 
-</details>
+  </details>
 
 - Make sure to label your input fields with a `p` tag, so that the user knows which field he is updating.
 
