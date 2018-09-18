@@ -25,7 +25,7 @@ Today we will be focusing on making HTTP requests using the Axios library. We wi
 
 # Part 1
 
-## Summary
+### Summary
 
 In this part we will use `axios` in the `componentDidMount` method of `App`, to get a list of products from the products API. We will refer to the documentation for this API, to tell us what how to format our axios requests. We will also be able to add new items to the products API server. In order to access the server, we will have to request an `API key`. This is common practice for public API's, that they require users to provide a personal API key, so that they can validate and control who has access to their servers. In the case of our products API, this API key needs to be applied to all http requests as a query parameter called `key`.
 
@@ -358,7 +358,7 @@ export default class App extends Component {
 # Part 2
 
 
-## Summary
+### Summary
 
 In this part we will be changing up the way we handle the cart. All of the cart will be stored on the API server, and we will have to use HTTP requests to add or remove items from the cart.
 
@@ -405,7 +405,7 @@ removeFromCart( itemId ) {
 
 # Part 3
 
-## Summary
+### Summary
 
 In this part we will create a reusable button component, and then replace all of the buttons in our app with this component. The purpose of this exercise is to give you practise using a small, reusable component.
 
@@ -464,7 +464,7 @@ function Button(props) {
 
 # Part 4
 
-## Summary
+### Summary
 
 In this part we will be creating a search function to query the API with a name string and get specific results. If you created the search function as part of Day 2 Black Diamond, you will need to refactor it to use the API. We will also be using a [payment API](http://104.248.178.153/payment/) to process user payments.
 
