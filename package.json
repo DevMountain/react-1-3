@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "proxy": {
-    "/products/*":{ "target": "http://localhost:5000"} ,
-     "/payment/*": { "target": "http://localhost:5500"} 
+    "/products/*": {
+      "target": "http://localhost:5000"
+    },
+    "/payment/*": {
+      "target": "http://localhost:5500"
+    }
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4"
@@ -16,6 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://devmountain.github.io/react-1-3"
 }
