@@ -462,7 +462,7 @@ function Button(props) {
 
 - Now go through your application and whereever you are using regular `button` elements, replace them with our new, custom `Button` component. Remeber that this takes this custom component takes the `text` string as a prop, as well as the `handleClick` function.
 
-### Part 4
+## Part 4
 
 ### Summary
 
