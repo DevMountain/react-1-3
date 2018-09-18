@@ -2,7 +2,9 @@
 
 # Project Summary
 
-In this project we will create an e-commerce React application from start to finish. We will be provided with the basic file structure from create-react-app, but the App.js file is empty. We will be working on this app over the course of three days. Each day's project is divided into four parts, with the first part being comparable to that day's mini-project and the following parts adding more features or implementing new patterns. You should expect to be able to complete the first two parts on each day, while parts three and four will offer a challenge.
+<p>In this project we will create an e-commerce React application from start to finish. </p>
+
+This project is a continuation from previous projects. If you are wanting to do this project then start with <a href="https://github.com/DevMountain/react-1-1"> this repo</a> first.
 
 # Day 3
 
