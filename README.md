@@ -115,7 +115,7 @@ componentDidMount() {
 
     </details>
 
-### Solution
+#### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -197,7 +197,7 @@ componentDidMount() {
 
 - Make sure to label your input fields with a `p` tag, so that the user knows which field he is updating.
 
-### Solution
+#### Solution
 
 <details>
 <summary> <code> AddProduct.js </code> </summary>
@@ -288,7 +288,7 @@ export default class AddProduct extends Component {
 - The resulting data from the post request will be a complete list of products, including the newly added item; use this result data to update the products on state.
   - To filter the products and put them on state, you can refer to the code in `componentDidMount`, where we first got the list of products.
 
-### Solution
+#### Solution
 
 <details>
 <summary> <code> src/App.js </code> </summary>
@@ -321,7 +321,7 @@ submit ( product ) {
   - Use `<AddProduct />` in the render method of `App`, and pass it the prop `submit` being equal to `this.submit`. e.g. `<AddProduct submit={this.submit}/>`
 - Bind the `submit` method on App in the constructor function, so that it will have the right `this` context (`this` needs to refer to the App component).
 
-### Solution
+#### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -369,7 +369,7 @@ In this part we will be changing up the way we handle the cart. All of the cart 
   - Chain a `.then` onto axios post request.
   - In the `.then` callback function, set the response data to the `cart` value on state.
 
-### Solution
+#### Solution
 
 <details>
 <summary> <code> App.js </code> </summary>
@@ -389,7 +389,7 @@ addToCart( item ) {
 - Refer to the [API docs](http://104.248.178.153/products/) on which enpoint to hit and for the base URL for the request.
 - Chain a `.then` onto the request to set the resulting data onto the `cart` value on state.
 
-### Solution
+#### Solution
 
 <details>
 <summary> <code> App.js </code> </summary>
@@ -418,7 +418,7 @@ In this part we will create a reusable button component, and then replace all of
 - Create a propTypes object for this component.
   - This component should expect two values on props: a function called `handleClick` and a string called `text`.
 
-### Solution
+#### Solution
 
 <details>
 <summary> <code> Button.js </code></summary>
@@ -446,7 +446,7 @@ Button.propTypes = {
 - The `onClick` for this element should be the function passed in on props.
 - It should display the text passed in on props.
 
-### Solution
+#### Solution
 
 <details> <code> Button.js </code> </button>
 
@@ -476,7 +476,7 @@ In this part we will be creating a search function to query the API with a name 
 - Add a button under the search input box that will activate the `handleSearch` method on click.
 - We will write the `handleSearch` function in the next step.
 
-### Solution
+#### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -497,7 +497,7 @@ In this part we will be creating a search function to query the API with a name 
 - It should make a get request to the API for the products with the `query parameter` of the user `search input`.
 - Filter the results onto category arrays to be stored on state, just as we have done when we get the products list in `componentDidMount`
 
-### Solution
+#### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -550,7 +550,7 @@ handleSearch() {
 - Then, in our checkout method, we will use an axios post to send the cart to the payment API.
 - Create a `POST` request in the `checkout` method, that will send the `this.state.cart` object.
 
-### Solution
+#### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
