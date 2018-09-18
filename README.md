@@ -23,13 +23,13 @@ Today we will be focusing on making HTTP requests using the Axios library. We wi
 - For this project you will be continuing the Day 2 project.
 - You should have completed Day 2 Part 2 in order to begin today's project.
 
-## Part 1
+# Part 1
 
-### Summary
+## Summary
 
 In this part we will use `axios` in the `componentDidMount` method of `App`, to get a list of products from the products API. We will refer to the documentation for this API, to tell us what how to format our axios requests. We will also be able to add new items to the products API server. In order to access the server, we will have to request an `API key`. This is common practice for public API's, that they require users to provide a personal API key, so that they can validate and control who has access to their servers. In the case of our products API, this API key needs to be applied to all http requests as a query parameter called `key`.
 
-### Step 1
+## Step 1
 
 - Run `npm install axios` in your project root directory, to install the `axios` package.
 - Import `axios` in `App.js`, at the top of the file, like so: `import axios from "axios";`
@@ -57,7 +57,7 @@ componentDidMount() {
 ```
 </details>
 
-### Step 2
+## Step 2
 
 - Now we need to get the list of products from the API, using the API key that we have just acquired.
 
@@ -115,7 +115,7 @@ componentDidMount() {
 
     </details>
 
-#### Solution
+### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -147,7 +147,7 @@ componentDidMount() {
 
 </details>
 
-### Step 3
+## Step 3
 
 - Create a file `src/components/AddProduct.js`.
 - This component should be able to store the following data on state: `name`, `description`, `price` and `image`. These will be strings, and can be initialized to empty strings.
@@ -197,7 +197,7 @@ componentDidMount() {
 
 - Make sure to label your input fields with a `p` tag, so that the user knows which field he is updating.
 
-#### Solution
+### Solution
 
 <details>
 <summary> <code> AddProduct.js </code> </summary>
@@ -278,7 +278,7 @@ export default class AddProduct extends Component {
 
 </details>
 
-### Step 4
+## Step 4
 
 - Create a `submit` method in `App.js`.
 - This method should accept one argument, an `object` with a name, description, price and image value.
@@ -288,7 +288,7 @@ export default class AddProduct extends Component {
 - The resulting data from the post request will be a complete list of products, including the newly added item; use this result data to update the products on state.
   - To filter the products and put them on state, you can refer to the code in `componentDidMount`, where we first got the list of products.
 
-#### Solution
+### Solution
 
 <details>
 <summary> <code> src/App.js </code> </summary>
@@ -315,13 +315,13 @@ submit ( product ) {
 
 </details>
 
-### Step 5
+## Step 5
 
 - Import `AddProduct.js` into `App.js`.
   - Use `<AddProduct />` in the render method of `App`, and pass it the prop `submit` being equal to `this.submit`. e.g. `<AddProduct submit={this.submit}/>`
 - Bind the `submit` method on App in the constructor function, so that it will have the right `this` context (`this` needs to refer to the App component).
 
-#### Solution
+### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -355,21 +355,21 @@ export default class App extends Component {
 
 </details>
 
-## Part 2
+# Part 2
 
 
-### Summary
+## Summary
 
 In this part we will be changing up the way we handle the cart. All of the cart will be stored on the API server, and we will have to use HTTP requests to add or remove items from the cart.
 
-### Step 1
+## Step 1
 
 - The `addToCart` method on `App.js` should be refactored to make an axios `POST` to the appropriate endpoint (refer to the [API docs](http://104.248.178.153/products/) for formatting the URL).
   - `addToCart` should take one argument, an item Id, which will be used in the axios call.
   - Chain a `.then` onto axios post request.
   - In the `.then` callback function, set the response data to the `cart` value on state.
 
-#### Solution
+### Solution
 
 <details>
 <summary> <code> App.js </code> </summary>
@@ -383,13 +383,13 @@ addToCart( item ) {
 
 </details>
 
-### Step 2
+## Step 2
 
 - The `removeFromCart` method should be refactored to make an axios request.
 - Refer to the [API docs](http://104.248.178.153/products/) on which enpoint to hit and for the base URL for the request.
 - Chain a `.then` onto the request to set the resulting data onto the `cart` value on state.
 
-#### Solution
+### Solution
 
 <details>
 <summary> <code> App.js </code> </summary>
@@ -403,13 +403,13 @@ removeFromCart( itemId ) {
 
 </details>
 
-## Part 3
+# Part 3
 
-### Summary
+## Summary
 
 In this part we will create a reusable button component, and then replace all of the buttons in our app with this component. The purpose of this exercise is to give you practise using a small, reusable component.
 
-### Step 1
+## Step 1
 
 - Create a `Button.js` file.
 - In this file, create a functional component as the default export.
@@ -418,7 +418,7 @@ In this part we will create a reusable button component, and then replace all of
 - Create a propTypes object for this component.
   - This component should expect two values on props: a function called `handleClick` and a string called `text`.
 
-#### Solution
+### Solution
 
 <details>
 <summary> <code> Button.js </code></summary>
@@ -440,13 +440,13 @@ Button.propTypes = {
 
 </details>
 
-### Step 2
+## Step 2
 
 - Now create the JSX for the Button component. It should return a button element.
 - The `onClick` for this element should be the function passed in on props.
 - It should display the text passed in on props.
 
-#### Solution
+### Solution
 
 <details> <code> Button.js </code> </button>
 
@@ -458,17 +458,17 @@ function Button(props) {
 
 </details>
 
-### Step 3
+## Step 3
 
 - Now go through your application and whereever you are using regular `button` elements, replace them with our new, custom `Button` component. Remeber that this takes this custom component takes the `text` string as a prop, as well as the `handleClick` function.
 
-## Part 4
+# Part 4
 
-### Summary
+## Summary
 
 In this part we will be creating a search function to query the API with a name string and get specific results. If you created the search function as part of Day 2 Black Diamond, you will need to refactor it to use the API. We will also be using a [payment API](http://104.248.178.153/payment/) to process user payments.
 
-### Step 1
+## Step 1
 
 - Create an `input box` on App of type `text`, that will take in user input in order to filter the list of products from the server.
 - Create a value on state called `searchInput`. This will represent the value that the user has typed into our search input box.
@@ -476,7 +476,7 @@ In this part we will be creating a search function to query the API with a name 
 - Add a button under the search input box that will activate the `handleSearch` method on click.
 - We will write the `handleSearch` function in the next step.
 
-#### Solution
+### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -491,13 +491,13 @@ In this part we will be creating a search function to query the API with a name 
 
 </details>
 
-### Step 2
+## Step 2
 
 - Create a `handleSearch` method on App.
 - It should make a get request to the API for the products with the `query parameter` of the user `search input`.
 - Filter the results onto category arrays to be stored on state, just as we have done when we get the products list in `componentDidMount`
 
-#### Solution
+### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
@@ -522,7 +522,7 @@ handleSearch() {
 
 </details>
 
-## Step 5
+# Step 5
 
 - Now we are going to use another API to process the user's payment when they checkout.
   - Payment API docs: http://104.248.178.153/payment/
@@ -545,12 +545,12 @@ handleSearch() {
 
     </details>
 
-## Step 6
+# Step 6
 
 - Then, in our checkout method, we will use an axios post to send the cart to the payment API.
 - Create a `POST` request in the `checkout` method, that will send the `this.state.cart` object.
 
-#### Solution
+### Solution
 
 <details> 
 <summary> <code> App.js </code> </summary>
