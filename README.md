@@ -25,8 +25,6 @@ Today we will be focusing on making HTTP requests using the Axios library. We wi
 
 ## Part 1
 
-<hr>
-
 ### Summary
 
 In this part we will use `axios` in the `componentDidMount` method of `App`, to get a list of products from the products API. We will refer to the documentation for this API, to tell us what how to format our axios requests. We will also be able to add new items to the products API server. In order to access the server, we will have to request an `API key`. This is common practice for public API's, that they require users to provide a personal API key, so that they can validate and control who has access to their servers. In the case of our products API, this API key needs to be applied to all http requests as a query parameter called `key`.
@@ -359,7 +357,6 @@ export default class App extends Component {
 
 ## Part 2
 
-<hr>
 
 ### Summary
 
@@ -407,8 +404,6 @@ removeFromCart( itemId ) {
 </details>
 
 ## Part 3
-
-<hr>
 
 ### Summary
 
@@ -468,8 +463,6 @@ function Button(props) {
 - Now go through your application and whereever you are using regular `button` elements, replace them with our new, custom `Button` component. Remeber that this takes this custom component takes the `text` string as a prop, as well as the `handleClick` function.
 
 ## Part 4
-
-<hr>
 
 ### Summary
 
