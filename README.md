@@ -16,7 +16,7 @@ Today we will be focusing on making HTTP requests using the Axios library. We wi
 
 # Live Example
 
-<img src="readme-assets/screenshot.png" alt="screenshot"/>
+<img src="readme-assets/finished.JPG" alt="screenshot"/>
 
 <a href="https://devmountain.github.io/react-1-3/">Click Me!</a>
 
@@ -544,9 +544,9 @@ handleSearch() {
 }
 ```
 
-<img src="./readme-assets/react-1-3-search.gif" />
 
 </details>
+<img src="./readme-assets/react-1-3-search.gif" />
 
 ## Step 3
 
@@ -592,7 +592,7 @@ checkout() {
   } else {
     axios.post(`https://r3payments.devmountain.com/products/catalog?key=${this.state.paymentApiKey}`, this.state.cart)
     .then(() => {
-      axios.delete(`hhttps://r3products.devmountain.com/products/cart/checkout?key=${this.state.apiKey}`)
+      axios.delete(`https://r3products.devmountain.com/products/cart/checkout?key=${this.state.apiKey}`)
         .then(checkoutResponse => {
           this.setState({
             cart: checkoutResponse.data,
