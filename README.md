@@ -590,7 +590,7 @@ checkout() {
   } else if (this.state.cart.length===0) {
     alert("Cart is empty.");
   } else {
-    axios.post(`https://r3payments.devmountain.com/products/catalog?key=${this.state.paymentAPIKey}`, this.state.cart)
+    axios.post(`https://r3payments.devmountain.com/products/catalog?key=${this.state.paymentApiKey}`, this.state.cart)
     .then(() => {
       axios.delete(`hhttps://r3products.devmountain.com/products/cart/checkout?key=${this.state.apiKey}`)
         .then(checkoutResponse => {
